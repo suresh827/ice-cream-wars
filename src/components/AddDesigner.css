@@ -1,0 +1,18 @@
+.AddDesigner {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.h1 {
+  font-family: "Caveat";
+}
+
+.Box {
+  border: 2px solid black;
+}
+
+.counterButtons {
+  display: flex;
+}
