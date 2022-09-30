@@ -9,8 +9,14 @@
   font-family: "Caveat";
 }
 
+.AddDesigner .h2 {
+  font-family: "Caveat";
+}
+
 .Box {
   border: 2px solid black;
+  width: 350px;
+  height: 200px;
 }
 
 .counterButtons {

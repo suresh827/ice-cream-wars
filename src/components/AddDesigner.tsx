@@ -26,7 +26,7 @@ const AddDesigner = () => {
 
   return (
     <div className="AddDesigner">
-      <h2>Ad Designer</h2>
+      <h2 className="h2">Ad Designer</h2>
       <div className="Box">
         Vote for <br /> {flavor}
       </div>
