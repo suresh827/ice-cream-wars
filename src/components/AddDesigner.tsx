@@ -5,22 +5,27 @@ const AddDesigner = () => {
   const [flavor, setFlavor] = useState("Chocolate");
   const [darkButton, setDarkButton] = useState<Boolean>(true);
   const [lightButton, setLightButton] = useState<Boolean>(false);
+  const [fontSize, setFontSize] = useState(40);
+
   function toggleButton() {
     darkButton === true ? setDarkButton(false) : setDarkButton(true);
     lightButton === true ? setLightButton(false) : setLightButton(true);
   }
 
-  const [number, setNumber] = useState(5);
-  function countUp() {
-    setNumber((prev) => prev + 1);
-  }
+  const increaseFontSize = (): void => {
+    if (fontSize <= 95) {
+      setFontSize((prev) => prev + 5);
+    }
+  };
 
-  function countDown() {
-    setNumber((prev) => prev - 1);
-  }
+  const decreaseFontSize = (): void => {
+    if (fontSize >= 5) {
+      setFontSize((prev) => prev - 5);
+    }
+  };
 
   let classes = "Counter";
-  if (number < 0) {
+  if (fontSize < 0) {
     classes = "Counter negative";
   }
 
@@ -28,7 +33,10 @@ const AddDesigner = () => {
     <div className="AddDesigner">
       <h2 className="h2">Ad Designer</h2>
       <div className="Box">
-        Vote for <br /> {flavor}
+        Vote for <br />{" "}
+        <text className="flavor" style={{ fontSize }}>
+          {flavor}
+        </text>
       </div>
       <h3> What to Support </h3>
       <div className="flavorButtons">
@@ -52,13 +60,13 @@ const AddDesigner = () => {
         <table>
           <tr>
             <td>
-              <button onClick={countDown}>Down</button>
+              <button onClick={decreaseFontSize}>Down</button>
             </td>
             <td>
-              <p>{number}</p>
+              <p>{fontSize}</p>
             </td>
             <td>
-              <button onClick={countUp}>Up</button>
+              <button onClick={increaseFontSize}>Up</button>
             </td>
           </tr>
         </table>
